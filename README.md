@@ -3,7 +3,7 @@ Classification Sample
 
 # Objective
 
-I wanted to create this so I could have a sample code to apply to different databases and have multiple algorithms
+I wanted to create this so I could have a sample code to apply to different databases and have multiple algorithms,
 I also wanted to have my first side-project posted on here
 
 # Using the code
