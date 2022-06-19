@@ -65,7 +65,7 @@ database.isnull().sum()
 
 database.loc[pd.isnull(database['category'])]                                   
 
-database['database'].fillna(database['database'].mean(), inplace = True) ## Replacing 
+database['category'].fillna(database['category'].mean(), inplace = True) ## Replacing 
 
 database.loc[pd.isnull(database['category'])]                                   
 
@@ -89,8 +89,8 @@ y_database
 
 type(y_database)                                                                
 
-x_database[:,value1].min(), x_database[:,value2].min(), x_database[:,value3].min()
-x_database[:,value1].max(), x_database[:,value2].max(), x_database[:,value3].max()
+x_database[:,'category1'].min(), x_database[:,'category2'].min(), x_database[:,'category3'].min()
+x_database[:,'category1'].max(), x_database[:,'category2'].max(), x_database[:,'category3'].max()
 
 from sklearn.preprocessing import StandardScaler                                
 
