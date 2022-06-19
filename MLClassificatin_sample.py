@@ -119,7 +119,7 @@ x_database_test.shape, y_database_test.shape
 
 import pickle                                                                   
 
-with open('database.pkl', mode = 'wb') as f:                                    
+with open('path/to/database.pk1', mode = 'wb') as f:                                    
   pickle.dump([x_database_train, y_database_train, x_database_test, y_database_test], f)
 
 
@@ -132,8 +132,8 @@ with open('database.pkl', mode = 'wb') as f:
 from sklearn.naive_bayes import GaussianNB
 
 import pickle
-  with open('path/to/database.pk1', 'rb') as f:
-    x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load
+with open('path/to/database.pk1', 'rb') as f:
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
@@ -167,7 +167,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
@@ -206,8 +206,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
-
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
+               
 x_database_train.shape, y_database_train.shape ## Visualizing
 x_database_test.shape, y_database_test.shape
 
@@ -293,7 +293,7 @@ Counter(str(entry.get_class()) for entry in database) ## Counts the values as an
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
