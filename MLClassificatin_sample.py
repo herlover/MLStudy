@@ -89,8 +89,8 @@ y_database
 
 type(y_database)                                                                
 
-x_database[:,'category1'].min(), x_database[:,'category2'].min(), x_database[:,'category3'].min()
-x_database[:,'category1'].max(), x_database[:,'category2'].max(), x_database[:,'category3'].max()
+x_database[:,0].min(), x_database[:,1].min(), x_database[:,2].min()
+x_database[:,0].max(), x_database[:,1].max(), x_database[:,2].max()
 
 from sklearn.preprocessing import StandardScaler                                
 
@@ -98,8 +98,8 @@ scaler_db = StandardScaler()
 
 x_database = scaler_db.fit_transform(x_database)                                
 
-x_database[:,'category1'].min(), x_database[:,'category2'].min(), x_database[:,'category3'].min()
-x_database[:,'category1'].max(), x_database[:,'category2'].max(), x_database[:,'category3'].max()
+x_database[:,0].min(), x_database[:,1].min(), x_database[:,2].min()
+x_database[:,0].max(), x_database[:,1].max(), x_database[:,2].max()
 
 x_database                                                                      
 
