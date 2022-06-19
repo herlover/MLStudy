@@ -172,9 +172,9 @@ with open('path/to/database.pk1', 'rb') as f:
 x_database_train.shape, y_database_train.shape ## Visualizing
 
 x_database_test.shape, y_database_test.shape
-
-tree_function = RandomForestClassifier(n_estimators=40, criterion='entropy', random_st
-tree_function.fit(x_database_train.shape, y_database_train.shape)
+             
+tree_function = DecisionTreeClassifier(criterion='entropy', random_state = 0)
+tree_function.fit(x_database_train, y_database_train)
 
 predictions = tree_function.predict(x_database_test)
 
