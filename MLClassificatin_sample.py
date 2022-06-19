@@ -107,7 +107,7 @@ x_database
 
 from sklearn.model_selection import train_test_split                            
 
-x_database_train, x_database_test, y_database_train, y_database_test = train_test_spli
+x_database_train, x_database_test, y_database_train, y_database_test = train_test_split(x_database, y_database, test_size = 0.25, random_state = 0)
 
 x_database_train.shape                                                          
 y_database_train.shape                                                          
