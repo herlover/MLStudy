@@ -98,8 +98,8 @@ scaler_db = StandardScaler()
 
 x_database = scaler_db.fit_transform(x_database)                                
 
-x_database[:,value1].min(), x_database[:,value2].min(), x_database[:,value3].min()
-x_database[:,value1].max(), x_database[:,value2].max(), x_database[:,value3].max()
+x_database[:,'category1'].min(), x_database[:,'category2'].min(), x_database[:,'category3'].min()
+x_database[:,'category1'].max(), x_database[:,'category2'].max(), x_database[:,'category3'].max()
 
 x_database                                                                      
 
