@@ -89,8 +89,8 @@ y_database
 
 type(y_database)                                                                
 
-x_database[:,'category1'].min(), x_database[:,'category2'].min(), x_database[:,'category3'].min()
-x_database[:,'category1'].max(), x_database[:,'category2'].max(), x_database[:,'category3'].max()
+x_database[:,0].min(), x_database[:,1].min(), x_database[:,2].min()
+x_database[:,0].max(), x_database[:,1].max(), x_database[:,2].max()
 
 from sklearn.preprocessing import StandardScaler                                
 
@@ -98,8 +98,8 @@ scaler_db = StandardScaler()
 
 x_database = scaler_db.fit_transform(x_database)                                
 
-x_database[:,'category1'].min(), x_database[:,'category2'].min(), x_database[:,'category3'].min()
-x_database[:,'category1'].max(), x_database[:,'category2'].max(), x_database[:,'category3'].max()
+x_database[:,0].min(), x_database[:,1].min(), x_database[:,2].min()
+x_database[:,0].max(), x_database[:,1].max(), x_database[:,2].max()
 
 x_database                                                                      
 
@@ -107,18 +107,20 @@ x_database
 
 from sklearn.model_selection import train_test_split                            
 
-x_database_train, x_database_test, y_database_train, y_database_test = train_test_spli
+x_database_train, x_database_test, y_database_train, y_database_test = train_test_split(x_database, y_database, test_size = 0.25, random_state = 0)
 
-x_database_train.shape                                                          
-y_database_train.shape                                                          
+x_database_train.shape
+             
+y_database_train.shape
+             
 x_database_test.shape, y_database_test.shape                                    
 
 # Saving Variables                                                              
 
 import pickle                                                                   
 
-with open('database.pkl', mode = 'wb') as f:                                    
-pickle.dump([x_database_train, y_database_train, x_database_test, y_database_teste],
+with open('path/to/database.pk1', mode = 'wb') as f:                                    
+  pickle.dump([x_database_train, y_database_train, x_database_test, y_database_test], f)
 
 
 
@@ -131,7 +133,7 @@ from sklearn.naive_bayes import GaussianNB
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.loa
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
@@ -144,7 +146,7 @@ naive_function.fit(x_database_train, y_database_train) ## Applying the algorithm
 predictions = naive_function.predict(x_database_test)
 predictions
 
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report ##
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report ## Evaluating the algorithm
 
 accuracy_score(y_database_test, predictions)
 
@@ -165,18 +167,19 @@ from sklearn.tree import DecisionTreeClassifier
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
 x_database_test.shape, y_database_test.shape
-
-tree_function = RandomForestClassifier(n_estimators=40, criterion='entropy', random_st
-tree_function.fit(x_database_train.shape, y_database_train.shape)
+             
+tree_function = DecisionTreeClassifier(criterion='entropy', random_state = 0)
+tree_function.fit(x_database_train, y_database_train)
 
 predictions = tree_function.predict(x_database_test)
+predictions
 
-from sklearn.metrics import accuracy_score, classification_report ## Evaluating the al
+from sklearn.metrics import accuracy_score, classification_report ## Evaluating the algorithm
 accuracy_score(y_database_test, predictions)
 
 from yellowbrick.classifier import ConfusionMatrix
@@ -187,12 +190,12 @@ cm.score(x_database_test, y_database_test)
 print(classification_report(y_database_teste, predictions))
 
 ## Visualization of trees
-
+             
 from sklearn import tree
-previsores = ['category', 'category2', 'category3']
+previsores = ['income', 'age', 'loan']
 fig, axes = plt.subplots(nrows = 1,ncols = 1,figsize = (20,20))
-tree.plot_tree(tree_database, feature_names=previsores, class_names=['0','1'], filled=
-fig.savefig('image.png')
+tree.plot_tree(tree_function, feature_names=previsores, class_names=['0','1'], filled=1)
+fig.savefig('path/to/image.jpg')
 
 
 
@@ -204,8 +207,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
-
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
+               
 x_database_train.shape, y_database_train.shape ## Visualizing
 x_database_test.shape, y_database_test.shape
 
@@ -291,7 +294,7 @@ Counter(str(entry.get_class()) for entry in database) ## Counts the values as an
 
 import pickle
 with open('path/to/database.pk1', 'rb') as f:
-x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
+  x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(f)
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
