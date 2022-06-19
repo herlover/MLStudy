@@ -190,12 +190,12 @@ cm.score(x_database_test, y_database_test)
 print(classification_report(y_database_teste, predictions))
 
 ## Visualization of trees
-
+             
 from sklearn import tree
-previsores = ['category', 'category2', 'category3']
+previsores = ['income', 'age', 'loan']
 fig, axes = plt.subplots(nrows = 1,ncols = 1,figsize = (20,20))
-tree.plot_tree(tree_database, feature_names=previsores, class_names=['0','1'], filled=
-fig.savefig('image.png')
+tree.plot_tree(tree_function, feature_names=previsores, class_names=['0','1'], filled=1)
+fig.savefig('path/to/image.jpg')
 
 
 
