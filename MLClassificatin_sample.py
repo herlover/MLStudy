@@ -177,8 +177,9 @@ tree_function = DecisionTreeClassifier(criterion='entropy', random_state = 0)
 tree_function.fit(x_database_train, y_database_train)
 
 predictions = tree_function.predict(x_database_test)
+predictions
 
-from sklearn.metrics import accuracy_score, classification_report ## Evaluating the al
+from sklearn.metrics import accuracy_score, classification_report ## Evaluating the algorithm
 accuracy_score(y_database_test, predictions)
 
 from yellowbrick.classifier import ConfusionMatrix
