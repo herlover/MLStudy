@@ -146,7 +146,7 @@ naive_function.fit(x_database_train, y_database_train) ## Applying the algorithm
 predictions = naive_function.predict(x_database_test)
 predictions
 
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report ##
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report ## Evaluating the algorithm
 
 accuracy_score(y_database_test, predictions)
 
