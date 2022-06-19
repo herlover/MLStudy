@@ -120,7 +120,7 @@ x_database_test.shape, y_database_test.shape
 import pickle                                                                   
 
 with open('database.pkl', mode = 'wb') as f:                                    
-  pickle.dump([x_database_train, y_database_train, x_database_test, y_database_teste],
+  pickle.dump([x_database_train, y_database_train, x_database_test, y_database_test], f)
 
 
 
@@ -133,7 +133,7 @@ from sklearn.naive_bayes import GaussianNB
 
 import pickle
   with open('path/to/database.pk1', 'rb') as f:
-    x_database_train, y_database_train, x_database_test, y_database_teste = pickle.loa
+    x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load
 
 x_database_train.shape, y_database_train.shape ## Visualizing
 
