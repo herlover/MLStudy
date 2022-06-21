@@ -183,7 +183,7 @@ from sklearn.metrics import accuracy_score, classification_report ## Evaluating 
 accuracy_score(y_database_test, predictions)
 
 from yellowbrick.classifier import ConfusionMatrix
-cm = ConfusionMatrix(tree_function))
+cm = ConfusionMatrix(tree_function)
 cm.fit(x_database_train, y_database_train)
 cm.score(x_database_test, y_database_test)
 
