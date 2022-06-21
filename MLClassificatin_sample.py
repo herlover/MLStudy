@@ -241,7 +241,7 @@ database = Orange.data.Table('/path/to/database') ## Importing database
 
 database.domain ## Visualizing the values
 
-divided_database = Orange.evaluation.testing.sample(database, n = 0.25) ## Dividing te
+divided_database = Orange.evaluation.testing.sample(database, n = 0.25) ## Dividing the database
 
 divided_database ## Visualizing values
 divided_database[0]
