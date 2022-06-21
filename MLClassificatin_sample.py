@@ -324,5 +324,24 @@ import pickle
 with open('path/to/database.pk1', 'rb') as f:
 x_database_train, y_database_train, x_database_test, y_database_teste = pickle.load(
 
+x_database_train.shape, y_database_train.shape ## Visualizing
 
-
+x_database_test.shape, y_database_test.shape
+  
+logistic_function = LogisticRegression(random_state=1)
+logistic_function.fit(x_database_train, y_database_train)
+  
+logistic_credit.intercept_
+  
+predictions = logistic_function.predict(x_database_test)
+predictions
+  
+from sklearn.metrics import accuracy_score, classification_report
+accuracy_score(y_database_test, predictions)
+  
+from yellowbrick.classifier import ConfusionMatrix
+cm = ConfusionMatrix(logistic_function)
+cm.fit(x_database_train, y_database_train)
+cm.score(x_database_test, y_database_test)
+  
+print(classification_report(y_database_teste, predictions))
